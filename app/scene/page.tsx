@@ -49,10 +49,11 @@ export default function ScenePage() {
     const animate = () => {
       frameId = requestAnimationFrame(animate)
       torus.rotation.y += 0.005   // rotate ~0.3°/frame
+      sphere.rotation.y += 0.01
       renderer.render(scene, camera)
     }
     animate()
-
+    
     // 7. CLEANUP — critical in Next.js (React StrictMode runs effects twice)
     return () => {
       cancelAnimationFrame(frameId)
